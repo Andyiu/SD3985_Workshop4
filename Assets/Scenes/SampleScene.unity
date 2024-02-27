@@ -390,6 +390,7 @@ MonoBehaviour:
   timeInvincible: 1
   movementSpeed: 5
   rb: {fileID: 1422872807}
+  projectilePrefab: {fileID: 2826722477787613332, guid: 5fbf7a54479c5b14aaa7edeaca78ce99, type: 3}
 --- !u!95 &1422872811
 Animator:
   serializedVersion: 3
@@ -4203,6 +4204,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3369844190195477098, guid: a14be439eac80924aaa13f0c9a5b32d3, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5900846
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369844190195477098, guid: a14be439eac80924aaa13f0c9a5b32d3, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2950423
+      objectReference: {fileID: 0}
     - target: {fileID: 4697897669981454224, guid: a14be439eac80924aaa13f0c9a5b32d3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4315,6 +4324,10 @@ PrefabInstance:
     - target: {fileID: 8655299150064979103, guid: 422f12ed97cdcee49bb3840b57054668, type: 3}
       propertyPath: m_Name
       value: ruby
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655299150064979103, guid: 422f12ed97cdcee49bb3840b57054668, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8655299150064979103, guid: 422f12ed97cdcee49bb3840b57054668, type: 3}
       propertyPath: m_TagString

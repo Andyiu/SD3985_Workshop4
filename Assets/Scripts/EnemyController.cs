@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
 
     public int damageAmount;
 
+    bool broken = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,11 @@ public class EnemyController : MonoBehaviour
             animator.SetFloat("Move X", direction);
             animator.SetFloat("Move Y", 0);
         }
+
+        if (!broken)
+        {
+            return;
+        }
     }
 
 
@@ -61,15 +68,32 @@ public class EnemyController : MonoBehaviour
         }
         
         rigidbody2D.MovePosition(position);
+
+        if (!broken)
+        {
+            return;
+        }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject + " is attacked by the enemy");
         if (collision.tag == "Player")
         {
+            print(collision.gameObject + " is attacked by the enemy");
             RubyController player = collision.GetComponent<RubyController>();
             player.ChangeHP(damageAmount);
         }
+        else
+        {
+            Fix();
+            Destroy(gameObject);
+        }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rigidbody2D.simulated = false;
+        animator.SetTrigger("Fixed");
     }
 }
 
